@@ -2,9 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 
 public class DirSize {
@@ -35,10 +33,9 @@ public class DirSize {
 		Path rootPath = Paths.get("c:\\Program Files");
 		
 		DirSize dirSize = new DirSize();
-		System.out.printf("ÇÕ°è : %s\n", dirSize.compute(rootPath));
+		System.out.printf("í•©ê³„ : %s\n", dirSize.compute(rootPath));
 		
 		long endTime = System.currentTimeMillis();
-		
-		System.out.printf("Ã³¸® ½Ã°£ : " + (endTime - startTime));
+		System.out.printf("ì²˜ë¦¬ì‹œê°„ : " + (endTime - startTime));
 	}
 }
