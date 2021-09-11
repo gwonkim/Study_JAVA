@@ -2,3 +2,8 @@ bin/
 .settings/
 .classpath
 .project
+.mvn/
+.cmd
+.class
+target
+.metadata
