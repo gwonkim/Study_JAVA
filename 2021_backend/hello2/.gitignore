@@ -2,8 +2,10 @@ bin/
 .settings/
 .classpath
 .project
-.mvn/
-.cmd
-.class
+
 target
-.metadata
+mvnw
+mvnw.cmd
+HELP.md
+.mvn
+
