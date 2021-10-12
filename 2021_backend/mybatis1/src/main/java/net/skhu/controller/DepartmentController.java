@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import net.skhu.dto.Department;
+import net.skhu.dto.Student;
 import net.skhu.mapper.DepartmentMapper;
+import net.skhu.mapper.StudentMapper;
 
 @Controller
 @RequestMapping("department")
@@ -40,8 +42,10 @@ public class DepartmentController {
 
     @GetMapping("edit")
     public String edit(Model model, @RequestParam("id") int id) {
-        Department department = departmentMapper.findOne(id);
-        model.addAttribute("department", department);
+    	Student student = studentMapper.findOne(id);
+        List<Department> departments = departmentMapper.findAll();
+        model.addAttribute("student", student);
+        model.addAttribute("department", departments);
         return "department/edit";
     }
 
