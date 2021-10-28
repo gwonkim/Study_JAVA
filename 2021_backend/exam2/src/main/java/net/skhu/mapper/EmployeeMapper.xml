@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.skhu.mapper.EmployeeMapper">
+
+  <resultMap id="EmployeeWithDepartment" type="net.skhu.dto.Employee">
+    <id property="id" column="id" />
+    <result property="employeeNo" column="employeeNo" />
+    <result property="name" column="name" />
+    <result property="departmentId" column="departmentId" />
+    <result property="salary" column="salary" />
+    <result property="sex" column="sex" />
+    <association property="department" javaType="net.skhu.dto.Department">
+      <id property="id" column="departmentId" />
+      <result property="title" column="title" />
+    </association>
+  </resultMap>
+
+</mapper>
