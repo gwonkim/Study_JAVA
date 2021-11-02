@@ -31,7 +31,7 @@ public class Form1Controller {
 
     @PostMapping("form1/edit1")
     public String edit1(Model model, Form1 form1) {
-    	// model.addAttribute("form1", form1); 자동 생성ㅂ																																																																																																																																																																																																																																																																																																								ㅁ
+    	// model.addAttribute("form1", form1); 자동 생성																																																																																																																																																																																																																																																																																																						ㅁ
         return "form1/edit1";
     }
 
