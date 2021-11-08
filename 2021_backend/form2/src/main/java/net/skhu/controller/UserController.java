@@ -39,7 +39,8 @@ public class UserController {
     public String register(Model model,
             @Valid UserRegister userRegister, BindingResult bindingResult)
     {
-        if (bindingResult.hasErrors()) { // 검사 에러 시
+       // if (bindingResult.hasErrors()) { // 검사 에러 시 validation1
+        if (userService.hasErrors(userRegister, bindingResult)) { // validation2
             model.addAttribute("departments", departmentService.findAll()); // 학과 정보 다시 넘기기
             return "user/register";
         }

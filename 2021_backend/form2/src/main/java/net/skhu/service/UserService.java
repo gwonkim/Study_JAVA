@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 import net.skhu.dto.User;
 import net.skhu.mapper.UserMapper;
@@ -21,6 +22,21 @@ public class UserService {
 
     public User findByUserid(String userid) {
         return userMapper.findByUserid(userid);
+    }
+
+    public boolean hasErrors(UserRegister userRegister, BindingResult bindingResult) {
+        if (bindingResult.hasErrors())
+            return true;
+        if (userRegister.getPasswd1().equals(userRegister.getPasswd2()) == false) {
+            bindingResult.rejectValue("passwd2", null, "비밀번호가 일치하지 않습니다.");
+            return true;
+        }
+        User user = userMapper.findByUserid(userRegister.getUserid());
+        if (user != null) {
+            bindingResult.rejectValue("userid", null, "사용자 아이디가 중복됩니다.");
+            return true;
+        }
+        return false;
     }
 
     public User createDto(UserRegister userRegister) {
