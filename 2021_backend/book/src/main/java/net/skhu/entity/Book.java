@@ -23,6 +23,7 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "categoryid") // categoryId -> error : SQLGrammarException: could not extract ResultSet
+    // 위 에러는 spring.jpa.hibernate.naming.physical-strategy의 설정을 application.properties에 작성을 안 해서 발생
     Category category;
 }
 
