@@ -33,7 +33,7 @@
           <td>${ engineer.id }</td>
           <td>${ engineer.employeeNo }</td>
           <td>${ engineer.name }</td>
-          <td>${ engineer.role.id }</td>
+          <td>${ engineer.role.title }</td>
           <td>${ engineer.phone }</td>
           <td>${ engineer.sex }</td>
           <td>${ engineer.email }</td>
